@@ -7,10 +7,13 @@ using System.Drawing;
 
 namespace Pathfinding
 {
-    class Node
+    public class Node
     {
         public Rectangle Bounds { get; set; }
-        public bool IsRevealed { get; set; }
+        public bool IsSet { get; set; }
+        public bool IsGoal { get; set; }
+        public bool IsVisited { get; set; }
+        public bool IsClosed { get; set; }
     }
 
 }
