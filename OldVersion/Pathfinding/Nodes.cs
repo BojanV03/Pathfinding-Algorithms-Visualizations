@@ -10,8 +10,8 @@ namespace Pathfinding
 {
     class Nodes
     {
-        public static int WIDTH = 48;
-        public static int HEIGHT = 22;
+        public static int WIDTH = 50;
+        public static int HEIGHT = 24;
         public static Node[,] Graph;
 
         public Nodes(Form F1)
@@ -29,7 +29,6 @@ namespace Pathfinding
                     Graph[i, j].getButton().Size = BtnSize;
                     Graph[i, j].setI(i);
                     Graph[i, j].setJ(j);
-                    F1.Controls.Add(Graph[i, j].getButton());
                 }
             }
         }
@@ -83,6 +82,7 @@ namespace Pathfinding
                 }
                 if(MazeGenDFS(Neighbours[index]) == 1)
                     return 1;
+
                 for (int i=0; i<Neighbours.Length; i++)
                 {
                     if (!Neighbours[i].isBarrier())
@@ -237,6 +237,7 @@ namespace Pathfinding
             }
             return 0;
         }
+
         public static void DepthFirstSearch(Node Start)
         {
 
